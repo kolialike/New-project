@@ -193,8 +193,8 @@
 					text-transform: uppercase
 	.services-content-img
 		position: absolute
-		right: 103px
-		top: 158px
+		right: 102px
+		top: 153px
 		z-index: 0
 		+breakpoint($break-1200)
 			position: initial
@@ -229,9 +229,10 @@
 		text-align: left
 	.portfolio-text
 		max-width: 263/1140*100%
-		display: inline-block
+		float: left
 		padding-top: 28px
 		+breakpoint($break-1200)
+			float: none
 			display: inline-block
 			max-width: 100%
 			padding-top: 0
@@ -282,16 +283,19 @@
 						font-weight: normal
 						font-size: 14px
 	.grid
-		width: 877/1140*100%
+		width: 840/1140*100%
 		float: right
 		margin-top: 30px
+		min-height: 3px
+		padding-bottom: 18px		
 		+breakpoint($break-1200)
 			display: block
 			width: 100%
 		.item
-			// float: left
-			margin: 0px 0px 30/877*100% 30/877*100%
+			display: inline-block
+			margin-bottom: 30px
 			width: 787/3/877*100%
+			+box-sizing(border-box)
 			+breakpoint(469px)
 				width: 100%
 				margin: 0px 
@@ -302,10 +306,11 @@
 	background: #60606e
 	padding-top: 38px
 	padding-bottom: 61px
-	margin-top: -8px
+	+breakpoint(1023px)
+		margin: 0
+		margin-bottom: 20px
 	+breakpoint(767px)
 		padding: 20px 0
-		margin: 0
 	.question-item
 		width: 575/1140*100%
 		display: inline-block
@@ -401,9 +406,13 @@
 			font-size: 12px
 			line-height: 12px
 			padding: 19px 18px 15px
+			display: inline-block
 			letter-spacing: -0.8px
 			text-transform: uppercase
+			appearance: none
+			-webkit-appearance: none
 			outline: none
+			height: 100%
 			+breakpoint(767px)
 				font-size: 10px
 			+breakpoint(469px)
@@ -417,10 +426,17 @@
 			padding: 18px 24px 16px 26px
 			position: absolute
 			right: -5px
+			height: 100%
+			display: inline-block
+			appearance: none
+			-webkit-appearance: none
 			top: 0
 			cursor: pointer
 			z-index: 10
 			outline: none
+			+transition(0.3s)
+			&:hover
+				background: #beb445	
 			+breakpoint(767px)
 				font-size: 12px
 				right: 0

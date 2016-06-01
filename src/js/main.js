@@ -5,12 +5,27 @@ $(document).ready(function(){
 		singleMode: false,
 		isResizable: true,
 		isAnimated: true,
+		gutter: 30,
 		animationOptions: { 
 			queue: false, 
 			duration: 300 
 		}
 	}
 	var grid = $('.grid').masonry(options); 
+
+	grid.imagesLoaded( function() {
+		  grid.masonry({
+			itemSelector: '.item',
+			singleMode: false,
+			isResizable: true,
+			isAnimated: true,
+			gutter: 30,
+			animationOptions: { 
+				queue: false, 
+				duration: 300 
+			}
+		  });
+	});
 
 	var portfolioCategory = $(".portfolio-category");
 	portfolioCategory.on('click', 'li', function(event) {
@@ -28,12 +43,14 @@ $(document).ready(function(){
 				singleMode: false,
 				isResizable: true,
 				isAnimated: true,
+				gutter: 30,
 				animationOptions: { 
 					queue: false, 
 					duration: 300 
 				}
 			});
 		}
+
 
 	});
 });
